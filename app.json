@@ -4,7 +4,10 @@
     "splash": {
       "image": "assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0000ff"
+    },
+    "androidStatusBar": {
+      "translucent": true
     },
     "android": {
       "package": "dev.expo.kudo.splash"
