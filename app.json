@@ -5,6 +5,14 @@
       "image": "assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "dev.expo.kudo.splash"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ddf5196f-aca9-4cfe-b959-5b2991f0b011"
+      }
     }
   }
 }
