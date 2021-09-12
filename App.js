@@ -20,7 +20,7 @@ SplashScreen.preventAutoHideAsync().catch(() => {
 
 export default function App() {
   return (
-    <AnimatedAppLoader image={{ uri: Constants.manifest.splash.image }}>
+    <AnimatedAppLoader image={require('./assets/splash.png')}>
       <MainScreen />
     </AnimatedAppLoader>
   );
@@ -31,7 +31,7 @@ function AnimatedAppLoader({ children, image }) {
 
   const startAsync = React.useMemo(
     // If you use a local image with require(...), use `Asset.fromModule`
-    () => () => Asset.fromURI(image).downloadAsync(),
+    () => () => Asset.fromModule(image).downloadAsync(),
     [image]
   );
 
