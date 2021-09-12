@@ -29,13 +29,13 @@ export default function App() {
 function AnimatedAppLoader({ children, image }) {
   const [isSplashReady, setSplashReady] = React.useState(false);
 
-  const startAsync = React.useMemo(
+  const startAsync = React.useCallback(
     // If you use a local image with require(...), use `Asset.fromModule`
-    () => () => Asset.fromModule(image).downloadAsync(),
+    () => Asset.fromModule(image).downloadAsync(),
     [image]
   );
 
-  const onFinish = React.useMemo(() => setSplashReady(true), []);
+  const onFinish = React.useCallback(() => { setTimeout(() => { setSplashReady(true); }, 2000); }, []);
 
   if (!isSplashReady) {
     return (
@@ -63,7 +63,7 @@ function AnimatedSplashScreen({ children, image }) {
     if (isAppReady) {
       Animated.timing(animation, {
         toValue: 0,
-        duration: 200,
+        duration: 3000,
         useNativeDriver: true,
       }).start(() => setAnimationComplete(true));
     }
